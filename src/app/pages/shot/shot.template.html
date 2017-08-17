@@ -1,0 +1,73 @@
+<section ng-init="onInit()">
+  <div class="album">
+    <div class="container">
+      <div class="row">
+        <div class="blog-content col-md-8">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="blog-box clearfix">
+                <div class="blog-media">
+                   <img class="img-responsive" ng-src="{{ :: shot.images.hidpi }}" ng-if="shot.images.hidpi">
+                   <img class="img-responsive" ng-src="{{ :: shot.images.normal }}" ng-if="!shot.images.hidpi">
+                   <img class="img-responsive" ng-src="{{ :: shot.images.teaser }}" ng-if="!shot.images.hidpi && !shot.images.normal">
+                </div>
+                <div class="blog-desc text-center">
+                  <h4>{{ :: shot.title }}</h4>
+                </div>
+                <div class="blog-description text-center" id="descricao"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar col-md-4">
+          <div class="widget text-center">
+            <div class="widget-title">
+                <h4>{{ :: shot.user.name }}</h4>
+            </div>
+            <div class="about-widget">
+              <div class="slat-header user ">
+                  <img class="img-responsive img-circle" ng-src="{{ :: shot.user.avatar_url }}">
+              </div>
+              <div id="bio" class="about-bio"></div>
+            </div>
+          </div>
+          <div class="widget widget-actions text-center">
+            <div class="like">
+              <p><span class="glyphicon glyphicon-heart" ng-class="{ 'liked' : liked }" ng-click="curtirDescurtirShot(shot.id)"></span>
+                {{ shot.likes_count }} Curtidas
+              </p>
+            </div>
+            <div class="views">
+              <p>{{ shot.views_count }} Visualizações </p>
+            </div>
+            <div class="comments">
+              <p>{{ shot.comments_count }} Comentários </p>
+            </div>
+          </div>
+          <div class="widget text-center">
+            <div class="widget-tag-title">
+              <h4>Tags</h4>
+            </div>
+            <ul class="widget-tag">
+              <li ng-repeat="tag in shot.tags">
+                <span>{{ :: tag }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="widget text-center">
+            <nav class="text-center">
+              <ul class="pagination pagination-lg justify-content-center">
+                <li class="page-item" ui-sref="shots({ filtro : filtro})" >
+                  <a class="page-link"><span class="glyphicon glyphicon-arrow-left"></span> Continuar procurando</a>
+
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

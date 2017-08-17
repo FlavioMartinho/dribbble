@@ -1,0 +1,389 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+* Inicio - Loading
+*/
+
+#loader {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+#loader {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+#loader .dot {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+}
+#loader .dot::before {
+    border-radius: 100%;
+    content: "";
+    height: 50px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(0);
+    width: 50px;
+}
+#loader .dot:nth-child(7n+1) {
+    transform: rotate(45deg);
+}
+#loader .dot:nth-child(7n+1)::before {
+    animation: 0.8s linear 0.1s normal none infinite running load;
+    background: #000000 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+2) {
+    transform: rotate(90deg);
+}
+#loader .dot:nth-child(7n+2)::before {
+    animation: 0.8s linear 0.2s normal none infinite running load;
+    background: #151515 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+3) {
+    transform: rotate(135deg);
+}
+#loader .dot:nth-child(7n+3)::before {
+    animation: 0.8s linear 0.3s normal none infinite running load;
+    background: #292929 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+4) {
+    transform: rotate(180deg);
+}
+#loader .dot:nth-child(7n+4)::before {
+    animation: 0.8s linear 0.4s normal none infinite running load;
+    background: #404040 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+5) {
+    transform: rotate(225deg);
+}
+#loader .dot:nth-child(7n+5)::before {
+    animation: 0.8s linear 0.5s normal none infinite running load;
+    background: #585858 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+6) {
+    transform: rotate(270deg);
+}
+#loader .dot:nth-child(7n+6)::before {
+    animation: 0.8s linear 0.6s normal none infinite running load;
+    background: #797979 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+7) {
+    transform: rotate(315deg);
+}
+#loader .dot:nth-child(7n+7)::before {
+    animation: 0.8s linear 0.7s normal none infinite running load;
+    background: #8e8e8e none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+8) {
+    transform: rotate(360deg);
+}
+#loader .dot:nth-child(7n+8)::before {
+    animation: 0.8s linear 0.8s normal none infinite running load;
+    background: #b3b3b3 none repeat scroll 0 0;
+}
+#loader .lading {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    bottom: -40px;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 180px;
+}
+@keyframes load {
+100% {
+    opacity: 0;
+    transform: scale(1);
+}
+}
+@keyframes load {
+100% {
+    opacity: 0;
+    transform: scale(1);
+}
+}
+/**
+* Fim - Loading
+*/
+
+
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 15px 20px;
+}
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.search-combo {
+   padding-bottom: 20px;
+}
+.album {
+   padding-top: 48px;
+   background-color: #f7f7f7;
+   padding-bottom: 60px;
+}
+.back-panel {
+   padding: 12px;
+   background-color: #fff;
+}
+.inside-search {
+   border-bottom-left-radius: 4px!important;
+   border-top-left-radius: 4px!important;
+}
+.card {
+   padding: 12px;
+   position: relative;
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: inline-flex;
+   -webkit-box-orient: horizontal;
+   -moz-box-orient: horizontal;
+   box-orient: horizontal;
+   flex-direction: row;
+   -webkit-box-pack: center;
+   -moz-box-pack: center;
+   box-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -moz-box-align: center;
+   box-align: center;
+   align-items: center;
+   background-color: #fff;
+   border: 0;
+}
+.card > img {
+   margin-bottom: 12px;
+}
+.card-text {
+   font-size: 85%;
+}
+.size-change {
+   min-width: 120px!important;
+}
+.size-change > ul {
+   list-style: none;
+   display: inline-flex;
+   padding: 5px;
+   margin-bottom: 0px!important;
+}
+.size-change > ul > li > span {
+   padding: 5px;
+   margin: 5px;
+   border-radius: 4px;
+   border: 1px solid #ddd;
+   font-size: 2em;
+   padding-left: 8px;
+}
+.small-grid .card {
+   width: calc(100% / 5);
+}
+.medium-grid .card {
+   width: calc(100% / 4);
+}
+.large-grid .card {
+   width: calc(100% / 3);
+}
+.navbar-brand {
+   color: #00b6e3!important;
+}
+.navbar {
+   border-radius: 0!important;
+}
+.form-horizontal .form-group {
+   margin-left: -5px!important;
+   margin-right: -5px!important;
+}
+.liked {
+   color : #df3e7b;
+}
+.sidebar .widget {
+   margin-bottom: 30px;
+   background-color: #ffffff;
+}
+.widget-title {
+   display: block;
+   position: relative;
+   padding-top: 20px;
+}
+.blog-box {
+   margin-bottom: 30px;
+   background-color: #ffffff;
+}
+.blog-media {
+   padding: 20px;
+   display: table;
+   margin: 0 auto;
+}
+.blog-desc {
+   padding: 40px 40px 10px 40px;
+}
+.blog-description {
+   padding: 20px;
+}
+.widget-title h4 {
+   padding: 0;
+   margin: 0;
+   line-height: 1;
+   font-size: 20px;
+}
+.widget-actions p {
+   margin: 0!important;
+}
+.widget-actions .like {
+   padding-top: 20px;
+}
+.widget-actions .views {
+   padding-top: 10px;
+}
+.widget-actions .comments {
+   padding-top: 10px;
+   padding-bottom: 20px;
+}
+.widget-tag-title {
+   padding-top: 20px;
+}
+.widget-tag {
+   padding: 0;
+   list-style-type: none;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-bottom: 20px;
+}
+.widget-tag li {
+   display: inline;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+.slat-header {
+   display: table;
+   margin: 0 auto;
+   padding-bottom: 20px;
+}
+.sidebar .about-widget {
+   padding: 30px 0 0;
+}
+.about-bio {
+   padding-bottom: 20px;
+   padding-right: 10px;
+   padding-left: 10px;
+}
+footer {
+   padding: 1em;
+   color: #00b6e3;
+   background-color: #222;
+   clear: left;
+   text-align: center;
+}
+.background-full {
+   background-color: rgba(255, 255, 255, 0.9);;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   z-index: 9999;
+}
+@media screen and (min-width: 768px) {
+  #adv-search {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .dropdown.dropdown-lg {
+    position: static !important;
+  }
+  .dropdown.dropdown-lg .dropdown-menu {
+    min-width: 500px;
+  }
+}
+@media (max-width: 1199px) {
+  .small-grid .card {
+    width: calc(100% / 4);
+  }
+  .medium-grid .card {
+    width: calc(100% / 3);
+  }
+  .large-grid .card {
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 991px) {
+  .small-grid .card{
+    width: calc(100% / 3);
+  }
+  .medium-grid .card {
+    width: calc(100% / 2);
+  }
+  .large-grid .card {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .search-combo {
+    background-color: #f7f7f7;
+    padding-top: 20px;
+  }
+  .album {
+    padding-top: 0;
+  }
+  .dropdown.dropdown-lg .dropdown-menu {
+    min-width: 200px!important;
+  }
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// bower:scss
+// endbower
+
+// injector
+// endinjector
+//

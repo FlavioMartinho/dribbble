@@ -1,0 +1,84 @@
+<div class="container search-combo" ng-init="onInit()">
+	<div class="row">
+		<div class="col-md-12">
+      <div class="input-group" id="adv-search">
+        <input type="text" disabled class="form-control" int-number ng-model="filtrosAtivos" />
+        <div class="input-group-btn">
+          <div class="btn-group" role="group">
+            <div class="dropdown dropdown-lg" id="search-bar">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+              <div class="dropdown-menu dropdown-menu-right" role="menu">
+                <form class="form-horizontal" role="form">
+                  <div class="form-group inside-search">
+                    <label for="filter">Categorias</label>
+                    <select class="form-control inside-search" id="category-select" ng-model="filtro.category">
+                      <option value="any">Qualquer</option>
+                      <option value="animated">Animações</option>
+                      <option value="attachments">Com Anexos</option>
+                      <option value="debuts">Estreias</option>
+                      <option value="playoffs">Playoffs</option>
+                      <option value="rebounds">Maior Repercução</option>
+                      <option value="teams">Equipes</option>
+                    </select>
+                  </div>
+                  <div class="form-group inside-search" ng-show="filtro.category !== 'playoffs' && !filtro.date" >
+                    <label for="filter">Data de Publicação</label>
+                    <select class="form-control inside-search" id="timeframe-select" ng-model="filtro.timeframe">
+                      <option value="now">Agora</option>
+                      <option value="week">Semana Passada</option>
+                      <option value="month">Mês Passado</option>
+                      <option value="year">Ano Passado</option>
+                      <option value="ever">Tudo</option>
+                    </select>
+                  </div>
+                  <div class="form-group inside-search" ng-show="filtro.category !== 'playoffs'">
+                    <label for="filter">Filtrar por</label>
+                    <select class="form-control inside-search" id="sort-select" ng-model="filtro.sort">
+                      <option value="popularity">Mais Popular</option>
+                      <option value="comments">Mais Comentados</option>
+                      <option value="recent">Mais Recentes</option>
+                      <option value="views">Mais Visualizados</option>
+                    </select>
+                  </div>
+                  <div class="form-group inside-search" ng-show="filtro.category !== 'playoffs'">
+                    <label for="filter">Data Específica</label>
+                    <input class="form-control inside-search" type="text" id="dataEspecifica" ng-model="filtro.date">
+                  </div>
+                  <button class="form-control btn btn-primary inside-search" type="button" ng-click="buscar()">Buscar</button>
+                </form>
+              </div>
+            </div>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="glyphicon" ng-class="{ 'glyphicon-th' : size === 'small', 'glyphicon-th-large' : size === 'medium', 'glyphicon-stop' : size === 'large' }"></span></button>
+            <div class="dropdown-menu dropdown-menu-right size-change" role="menu">
+              <ul>
+                <li><span class="glyphicon glyphicon-th" ng-click="ajustarTamanho(1)"></span></li>
+                <li><span class="glyphicon glyphicon-th-large" ng-click="ajustarTamanho(2)"></span></li>
+                <li><span class="glyphicon glyphicon-stop" style="padding-left: 4px;" ng-click="ajustarTamanho(3)"></span></li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-primary" ng-click="buscar()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="album text-muted">
+  <div class="container">
+    <ul class="row back-panel" ng-class="{ 'small-grid' : size === 'small', 'medium-grid' : size === 'medium', 'large-grid' : size === 'large' }">
+      <li class="card" data-ng-repeat="shot in shotList" ui-sref="shot({ shot : shot , filtro : filtro})">
+        <img class="img-responsive img-thumbnail" ng-src="{{shot.images.normal}}">
+      </li>
+    </ul>
+    <nav class="text-center">
+      <ul class="pagination pagination-lg justify-content-center">
+        <li class="page-item" ng-click="carregarAnterior()" ng-hide="loading" ng-if="filtro.page > 1">
+          <a class="page-link">Anterior</a>
+        </li>
+        <li class="page-item" ng-click="carregarProxima()" ng-hide="loading">
+          <a class="page-link">Próxima</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
